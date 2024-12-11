@@ -2,8 +2,9 @@
 
 [Boost Libraries](https://boost.io) using `build.zig`.
 
-Replacing the [CMake](https://cmake.org/) and [B2](https://www.bfgroup.xyz/b2/) build system.
+Replacing the [CMake](https://cmake.org/) and [B2](https://www.bfgroup.xyz/b2/) build system. Inspired by [allyourcodebase/boost-libraries-zig](https://github.com/allyourcodebase/boost-libraries-zig).
 
+To include all of the numerous boost libraries using Zig's build system in a highly customizable and portable format, the zig module was generated and bootstrapped using Python. See [scripts](scripts/) for more details.
 
 > [!IMPORTANT]
 > For C++ projects, `zig c++` uses llvm-libunwind + llvm-libc++ (static-linking) by default.
