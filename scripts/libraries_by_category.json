@@ -1,0 +1,394 @@
+[
+  {
+    "libraries": [
+      "charconv",
+      "convert",
+      "format",
+      "iostreams",
+      "lexical_cast",
+      "locale",
+      "regex",
+      "spirit",
+      "spirit",
+      "spirit",
+      "static_string",
+      "algorithm",
+      "utility",
+      "tokenizer",
+      "wave",
+      "xpressive"
+    ],
+    "name": "category_string"
+  },
+  {
+    "libraries": [
+      "array",
+      "bimap",
+      "circular_buffer",
+      "container",
+      "dynamic_bitset",
+      "gil",
+      "graph",
+      "graph_parallel",
+      "icl",
+      "intrusive",
+      "json",
+      "multi_array",
+      "multi_index",
+      "ptr_container",
+      "poly_collection",
+      "property_map",
+      "property_map_parallel",
+      "property_tree",
+      "utility",
+      "utility",
+      "unordered",
+      "url",
+      "variant",
+      "variant2"
+    ],
+    "name": "category_containers"
+  },
+  {
+    "libraries": [
+      "gil",
+      "graph",
+      "graph_parallel",
+      "iterator",
+      "utility",
+      "tokenizer"
+    ],
+    "name": "category_iterators"
+  },
+  {
+    "libraries": [
+      "algorithm",
+      "foreach",
+      "geometry",
+      "gil",
+      "graph",
+      "graph_parallel",
+      "histogram",
+      "algorithm",
+      "polygon",
+      "qvm",
+      "range",
+      "sort",
+      "algorithm"
+    ],
+    "name": "category_algorithms"
+  },
+  {
+    "libraries": [
+      "bind",
+      "container_hash",
+      "container_hash",
+      "function",
+      "functional",
+      "functional",
+      "functional",
+      "functional",
+      "hof",
+      "lambda",
+      "lambda2",
+      "local_function",
+      "bind",
+      "phoenix",
+      "core",
+      "utility",
+      "signals2"
+    ],
+    "name": "category_function_objects"
+  },
+  {
+    "libraries": [
+      "utility",
+      "concept_check",
+      "core",
+      "function_types",
+      "gil",
+      "utility",
+      "utility",
+      "property_map",
+      "property_map_parallel",
+      "qvm",
+      "static_assert",
+      "stl_interfaces",
+      "tti",
+      "type_traits",
+      "yap"
+    ],
+    "name": "category_generic"
+  },
+  {
+    "libraries": [
+      "callable_traits",
+      "describe",
+      "function_types",
+      "fusion",
+      "hana",
+      "hof",
+      "metaparse",
+      "mp11",
+      "mpl",
+      "pfr",
+      "proto",
+      "static_assert",
+      "tti",
+      "type_traits",
+      "yap"
+    ],
+    "name": "category_metaprogramming"
+  },
+  {
+    "libraries": [
+      "utility",
+      "preprocessor",
+      "vmd"
+    ],
+    "name": "category_preprocessor"
+  },
+  {
+    "libraries": [
+      "asio",
+      "atomic",
+      "beast",
+      "cobalt",
+      "compute",
+      "context",
+      "coroutine",
+      "coroutine2",
+      "fiber",
+      "interprocess",
+      "lockfree",
+      "mpi",
+      "mysql",
+      "redis",
+      "thread"
+    ],
+    "name": "category_concurrent"
+  },
+  {
+    "libraries": [
+      "accumulators",
+      "endian",
+      "geometry",
+      "histogram",
+      "integer",
+      "numeric",
+      "math",
+      "math",
+      "math",
+      "math",
+      "math",
+      "math",
+      "multi_array",
+      "multiprecision",
+      "numeric",
+      "numeric",
+      "utility",
+      "polygon",
+      "qvm",
+      "random",
+      "ratio",
+      "rational",
+      "safe_numerics",
+      "numeric"
+    ],
+    "name": "category_math"
+  },
+  {
+    "libraries": [
+      "assert",
+      "concept_check",
+      "contract",
+      "safe_numerics",
+      "stacktrace",
+      "static_assert",
+      "test"
+    ],
+    "name": "category_correctness"
+  },
+  {
+    "libraries": [
+      "assert",
+      "exception",
+      "leaf",
+      "system",
+      "throw_exception"
+    ],
+    "name": "category_error_handling"
+  },
+  {
+    "libraries": [
+      "any",
+      "bimap",
+      "utility",
+      "container",
+      "fusion",
+      "geometry",
+      "heap",
+      "histogram",
+      "icl",
+      "json",
+      "multi_index",
+      "optional",
+      "pfr",
+      "ptr_container",
+      "polygon",
+      "property_tree",
+      "tuple",
+      "type_erasure",
+      "url",
+      "uuid",
+      "variant",
+      "variant2"
+    ],
+    "name": "category_data"
+  },
+  {
+    "libraries": [
+      "chrono",
+      "crc",
+      "date_time",
+      "units",
+      "uuid"
+    ],
+    "name": "category_domain"
+  },
+  {
+    "libraries": [
+      "gil"
+    ],
+    "name": "category_image_processing"
+  },
+  {
+    "libraries": [
+      "asio",
+      "assign",
+      "beast",
+      "endian",
+      "format",
+      "io",
+      "iostreams",
+      "json",
+      "mysql",
+      "program_options",
+      "redis",
+      "serialization",
+      "url"
+    ],
+    "name": "category_io"
+  },
+  {
+    "libraries": [
+      "python"
+    ],
+    "name": "category_inter_language"
+  },
+  {
+    "libraries": [
+      "compat",
+      "describe",
+      "exception",
+      "foreach",
+      "move",
+      "outcome",
+      "parameter",
+      "parameter_python",
+      "scope",
+      "scope_exit",
+      "throw_exception",
+      "type_index",
+      "typeof"
+    ],
+    "name": "category_emulation"
+  },
+  {
+    "libraries": [
+      "align",
+      "pool",
+      "smart_ptr"
+    ],
+    "name": "category_memory"
+  },
+  {
+    "libraries": [
+      "spirit",
+      "spirit",
+      "spirit"
+    ],
+    "name": "category_parsing"
+  },
+  {
+    "libraries": [
+      "utility",
+      "flyweight",
+      "outcome",
+      "scope",
+      "signals2",
+      "utility"
+    ],
+    "name": "category_patterns"
+  },
+  {
+    "libraries": [
+      "compat",
+      "function",
+      "outcome",
+      "parameter",
+      "parameter_python",
+      "system"
+    ],
+    "name": "category_programming"
+  },
+  {
+    "libraries": [
+      "msm",
+      "statechart"
+    ],
+    "name": "category_state"
+  },
+  {
+    "libraries": [
+      "chrono",
+      "context",
+      "date_time",
+      "dll",
+      "fiber",
+      "filesystem",
+      "nowide",
+      "process",
+      "stacktrace",
+      "system",
+      "thread"
+    ],
+    "name": "category_system"
+  },
+  {
+    "libraries": [
+      "charconv",
+      "conversion",
+      "convert",
+      "core",
+      "endian",
+      "lexical_cast",
+      "log",
+      "numeric",
+      "predef",
+      "program_options",
+      "core",
+      "timer",
+      "utility",
+      "utility"
+    ],
+    "name": "category_miscellaneous"
+  },
+  {
+    "libraries": [
+      "compatibility",
+      "config"
+    ],
+    "name": "category_workarounds"
+  }
+]
