@@ -2,10 +2,6 @@
     .name = "boost-libraries",
     .version = "1.86.0",
     .dependencies = .{
-        .boost = .{
-            .url = "git+https://github.com/boostorg/boost.git#65c1319bb92fe7a9a4abd588eff5818d9c2bccf9",
-            .hash = "12202db335025beb44a69264743bda9696165bb037aab7ce93f232207a86c3b891ae"
-        },
         .core = .{
             .url = "git+https://github.com/boostorg/core#boost-1.86.0",
             .hash = "1220bf61b43db160772f9745614c8e343ab57bf0675cef2e6c86b17ce51731caa275",
@@ -483,7 +479,7 @@
             .hash = "122001fc1ec7bbcbf86fa2cbcbf6f5ee3f2de247057d9ce7c2fe7527b3070345c7ec",
         },
         .program_options = .{
-            .url = "git+https://github.com/boostorg/program_options?ref=boost-1.86.0#27f927694547277f845ae855e80b96be252f826c",
+            .url = "git+https://github.com/boostorg/program_options#boost-1.86.0",
             .hash = "12200e4cd1b4acc3d9bd8fca82d4316e6bb113acae9e2f315cc914af40d7fd1caf26",
         },
     },
