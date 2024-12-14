@@ -36,8 +36,8 @@ Build libraries by type
 $ zig build -Doptimize=<Debug|ReleaseSafe|ReleaseFast|ReleaseSmall> \
     -Dtarget=<triple-target> \
     --summary <all|new> \
-    -Dheader_only
-    -Dcompiled
+    -Dboost_header_only
+    -Dboost_compiled
 ```
 
 Build libraries by category
