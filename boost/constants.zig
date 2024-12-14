@@ -104,6 +104,7 @@ pub const boost_libs = [_][]const u8{
     "predef",
     "preprocessor",
     "process",
+    "program_options", // no header-only
     "property_map",
     "property_map_parallel",
     "property_tree",
