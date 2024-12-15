@@ -85,7 +85,7 @@ pub fn boostLibraries(b: *std.Build, config: Config) *std.Build.Step.Compile {
     inline for (boost_libs) |name| {
         const boostLib = b.dependency(name, .{});
         lib.installHeadersDirectory( // Ensures all Boost headers are output to installation prefix
-            boostLib.path("include"), "", .{ .include_extensions = &.{ ".h", ".hpp" } });
+            boostLib.path("include"), "", .{ .include_extensions = &.{ ".h", ".hpp", ".ipp" } });
         lib.addIncludePath(boostLib.path("include"));
     }
     // TODO: figure out how to tell the library where the includes are without inundating it with a shitload of include paths
