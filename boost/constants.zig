@@ -10,6 +10,8 @@ pub const cxxFlags: []const []const u8 = &.{
 pub const comp_required_libs = [_][] const u8 {
     "chrono",
     "context",
+    "coroutine",
+    "coroutine2",
     "filesystem",
     "graph_parallel",
     "io_streams",
@@ -49,7 +51,8 @@ pub const boost_libs = [_][]const u8{
     "context", // cpp + asm (no header-only)
     "conversion",
     "core",
-    "coroutine2", // need boost.context
+    "coroutine", // Deprecated as of 1.86.0
+    "coroutine2", // need requires C++ standard 11 or higher
     "crc",
     "date_time",
     "describe",

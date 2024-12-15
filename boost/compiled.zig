@@ -41,6 +41,28 @@ pub fn buildContainer(b: *std.Build, obj: *std.Build.Step.Compile) void {
     });
 }
 
+pub fn buildCoroutine(b: *std.Build, obj: *std.Build.Step.Compile) void {
+    const coroutinePath = b.dependency("coroutine", .{}).path("src");
+    obj.addCSourceFiles(.{
+        .root = coroutinePath,
+        .flags = cxxFlags,
+        .files = &.{
+
+        },
+    });
+}
+
+pub fn buildCoroutine2(b: *std.Build, obj: *std.Build.Step.Compile) void {
+    const coroutine2Path = b.dependency("coroutine2", .{}).path("src");
+    obj.addCSourceFiles(.{
+        .root = coroutine2Path,
+        .flags = cxxFlags ++ &[_][]const u8{"-std=c++11"},
+        .files = &.{
+
+        },
+    });
+}
+
 pub fn buildFiber(b: *std.Build, obj: *std.Build.Step.Compile) void {
     const fiberPath = b.dependency("fiber", .{}).path("src");
     obj.addCSourceFiles(.{
@@ -794,3 +816,4 @@ pub fn buildContext(b: *std.Build, obj: *std.Build.Step.Compile) void {
         else => @panic("Invalid arch"),
     }
 }
+

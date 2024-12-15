@@ -20,6 +20,8 @@ pub fn build(b: *std.Build) void {
             .cobalt = b.option(bool, "cobalt", "Build boost.cobalt library (default: false)") orelse false,
             .container = b.option(bool, "container", "Build boost.container library (default: false)") orelse false,
             .context = b.option(bool, "context", "Build boost.context library (default: false)") orelse false,
+            .coroutine = b.option(bool, "coroutine", "Build boost.coroutine (Warning: Deprecated) library (default: false)") orelse false,
+            .coroutine2 = b.option(bool, "coroutine2", "Build boost.coroutine2 library (default: false)") orelse false,
             .exception = b.option(bool, "exception", "Build boost.exception library (default: false)") orelse false,
             .fiber = b.option(bool, "fiber", "Build boost.fiber library (default: false)") orelse false,
             .filesystem = b.option(bool, "filesystem", "Build boost.filesystem library (default: false)") orelse false,
@@ -68,6 +70,10 @@ pub fn build(b: *std.Build) void {
 }
 
 pub fn boostLibraries(b: *std.Build, config: Config) *std.Build.Step.Compile {
+    const stdout_file = std.io.getStdOut().writer();
+    var bw = std.io.bufferedWriter(stdout_file);
+    const stdout = bw.writer();
+    
     const shared = b.option(bool, "shared", "Build as shared library (default: false)") orelse false;
 
     const lib = if (shared) b.addSharedLibrary(.{
@@ -88,7 +94,7 @@ pub fn boostLibraries(b: *std.Build, config: Config) *std.Build.Step.Compile {
             boostLib.path("include"), "", .{ .include_extensions = &.{ ".h", ".hpp", ".ipp" } });
         lib.addIncludePath(boostLib.path("include"));
     }
-    // TODO: figure out how to tell the library where the includes are without inundating it with a shitload of include paths
+    // TODO: Currently ALL headers are added and any granularity is ignored, needs to be implemented.
 
     // zig-pkg bypass (artifact need generate object file)
     const empty = b.addWriteFile("empty.cc",
@@ -121,6 +127,19 @@ pub fn boostLibraries(b: *std.Build, config: Config) *std.Build.Step.Compile {
         }
         if (module.charconv) {
             compiled.buildCharConv(b, lib);
+        }
+        if (module.coroutine) {
+            if (boost_version.isGreater(std.SemanticVersion{.major=1, .minor=86, .patch=0})) {
+                stdout.print(
+                    "WARNING: Library Boost.Coroutine is deprecated in version {d}.{d}, compiling anyway.", 
+                    .{boost_version.major, boost_version.minor}
+                ) catch @panic("OOM");
+                bw.flush() catch @panic("OOM"); // don't forget to flush!
+            }            
+            compiled.buildCoroutine(b, lib);
+        }
+        if (module.coroutine2) {
+            compiled.buildCoroutine2(b, lib);
         }
         if (module.process) {
             compiled.buildProcess(b, lib);
@@ -190,6 +209,8 @@ const boostLibrariesModules = struct {
     cobalt: bool = false,
     container: bool = false,
     context: bool = false,
+    coroutine: bool = false,
+    coroutine2: bool = false,
     exception: bool = false,
     fiber: bool = false,
     filesystem: bool = false,

@@ -98,6 +98,14 @@
             .url = "git+https://github.com/boostorg/container#boost-1.86.0",
             .hash = "1220a40ea0da22e2c1a6d569124505fae5fa9e19739e70c2023b6bdf83ef6b04b30d",
         },
+        .coroutine = .{
+            .url = "git+https://github.com/boostorg/coroutine#boost-1.86.0",
+            .hash = "1220705bdd1fdfdf2f6172b7653231545b86d44fcfbedfc011263805f2dd20108c3b",
+        },
+        .coroutine2 = .{
+            .url = "git+https://github.com/boostorg/coroutine2#boost-1.86.0",
+            .hash = "1220705bdd1fdfdf2f6172b7653231545b86d44fcfbedfc011263805f2dd20108c3b",
+        },
         .endian = .{
             .url = "git+https://github.com/boostorg/endian#boost-1.86.0",
             .hash = "1220705bdd1fdfdf2f6172b7653231545b86d44fcfbedfc011263805f2dd20108c3b",
