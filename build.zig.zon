@@ -490,6 +490,10 @@
             .url = "git+https://github.com/boostorg/program_options#boost-1.86.0",
             .hash = "12200e4cd1b4acc3d9bd8fca82d4316e6bb113acae9e2f315cc914af40d7fd1caf26",
         },
+        .ccpputilz = .{
+            .url = "git+https://github.com/Anthony-J-G/ccpputilz#7d8c45a5a1fae7b6aa4cb35b270048041e8adefa",
+            .hash = "12206247b573514421543ff957462a16b1adca271463360c6e4d24a70c36997449d4",
+        },
     },
     .paths = .{""},
 }

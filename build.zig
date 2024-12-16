@@ -1,5 +1,8 @@
 const std = @import("std");
 
+const utilz = @import("ccpputilz");
+const version = utilz.version;
+
 const constants = @import("boost/constants.zig");
 const compiled = @import("boost/compiled.zig");
 
@@ -73,7 +76,7 @@ pub fn boostLibraries(b: *std.Build, config: Config) *std.Build.Step.Compile {
     const stdout_file = std.io.getStdOut().writer();
     var bw = std.io.bufferedWriter(stdout_file);
     const stdout = bw.writer();
-    
+
     const shared = b.option(bool, "shared", "Build as shared library (default: false)") orelse false;
 
     const lib = if (shared) b.addSharedLibrary(.{
@@ -129,13 +132,10 @@ pub fn boostLibraries(b: *std.Build, config: Config) *std.Build.Step.Compile {
             compiled.buildCharConv(b, lib);
         }
         if (module.coroutine) {
-            if (boost_version.isGreater(std.SemanticVersion{.major=1, .minor=86, .patch=0})) {
-                stdout.print(
-                    "WARNING: Library Boost.Coroutine is deprecated in version {d}.{d}, compiling anyway.", 
-                    .{boost_version.major, boost_version.minor}
-                ) catch @panic("OOM");
+            if (version.isGreater(boost_version, std.SemanticVersion{ .major = 1, .minor = 86, .patch = 0 })) {
+                stdout.print("WARNING: Library Boost.Coroutine is deprecated in version {d}.{d}, compiling anyway.", .{ boost_version.major, boost_version.minor }) catch @panic("OOM");
                 bw.flush() catch @panic("OOM"); // don't forget to flush!
-            }            
+            }
             compiled.buildCoroutine(b, lib);
         }
         if (module.coroutine2) {
